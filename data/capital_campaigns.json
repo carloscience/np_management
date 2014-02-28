@@ -1,0 +1,41 @@
+{
+    "capital_campaigns": [
+     {
+        "name": "Renita Tyson",
+        "title": "Why be a fundraiser?",
+        "href": "#!capital_campaigns",
+        "image": "images/RenitaTyson.jpg",
+        "id": "87487833",
+        "header": "Capital Campaigns"
+     },
+     {
+        "name": "Renita Tyson",
+        "title": "Impact",
+        "href": "#!impact",
+        "id": "87487224"
+     },
+     {
+        "name": "Renita Tyson",
+        "title": "Organization's Needs",
+        "href": "#!organization",
+        "id": "87487226"
+     },
+     {
+        "name": "Renita Tyson",
+        "title": "Case for Support",
+        "href": "#!support",
+        "id": "87487222"
+     },
+     {
+        "name": "Renita Tyson",
+        "title": "Who leads a capital campaign",
+        "href": "#!campaign",
+        "id": "87487229"
+     },
+     {
+        "name": "Renita Tyson",
+        "title": "Renita Tyson...intro",
+        "href": "#!intro",
+        "id": "87487225"
+     }]
+}

@@ -1,0 +1,37 @@
+﻿/* Flexible ex-bar with full transparency on the arrow heads */
+
+#exbar
+{
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 100%;
+    display: block;
+    overflow:hidden;
+    height: 66px;
+    z-index: 1000;
+}
+
+
+#exbar img {  }
+#exbar div { float: left; height: 66px; line-height: 66px; position: relative; }
+
+#exbar .xGroup { width: 33%; }
+#exbar .logo { background: #5582BB; width: 67%; }
+#exbar .explore { background: #ECB731; margin-right: -56px /* reduce distance added by .xArrows */; width: 100%; text-align: center; }
+
+#exbar .xArrows .arrow { float:left; height: 0; margin: 0; padding: 0; width: 0; }
+#exbar .xArrows .cleft { border-bottom: 33px solid transparent; border-left: 28px solid #5582BB; border-top: 33px solid transparent; }
+#exbar .xArrows .cright { border-bottom: 33px solid transparent; border-right: 28px solid #ECB731; border-top: 33px solid transparent; }
+
+#Logo { margin: 1px 0 0 30px; } 
+#Logo a { color: #fff; } 
+#explore { color: #FFFFFF; display: block; font-family: sans-serif; /*font-size: 0.60em;*/ font-weight: bold; margin: 0 0 0 -28px; text-transform: lowercase; width: 100%; } 
+#explore sup { vertical-align: text-top; } 
+#explore img {margin-top: 25px;}
+
+@media only screen and (max-width: 767px) {
+    #exbar .logo { width: 70%; }
+    #exbar .xGroup { width: 30%; }
+    #exbar .xGroup h2 { display: none; }
+}

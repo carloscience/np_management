@@ -1,0 +1,17 @@
+ <section id="webinar_header">
+ 	<h2><%=model[0].header %></h2> <span class="divide"> / </span> <h3><%=model[0].name %></h3>
+ </section>
+ <section id="webinar_graphic">
+ 	<img src="<%=model[0].image %>" />
+ 	<div id="video_list">
+ 		<article id="titles">
+ 		<h2><%=model[0].header %></h2>
+ 		<h3>By <%=model[0].name %></h3>
+
+ 		<ul>
+ 		<% _.each(model, function(cc) { %>
+			<li><a href="<%= cc.href %>/<%=cc.id %>" id="<%= cc.id %>" title="<%= cc.title %>"><%= cc.title %></a></li>
+		<% }); %>
+		</ul>
+ 	</article>
+ </section>

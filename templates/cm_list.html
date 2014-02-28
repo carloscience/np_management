@@ -1,0 +1,7 @@
+ <h1>Cause Marketing</h1>
+ <h2>by <%=model[0].name %></h2>
+ <ul>
+ <% _.each(model, function(cm) { %>
+	<li><a href="<%= cm.href %>" id="<%= cm.id %>" title="<%= cm.title %>"><%= cm.title %></a></li>
+<% }); %>
+</ul>

@@ -1,0 +1,35 @@
+{
+    "fundraising_professionals": [
+     {
+        "name": "Pamela Barden",
+        "title": "Target Audience and speak their language",
+        "image": "images/PamelaBarden.jpg",
+        "id": "87321276",
+        "header": "Fundraising Professionals"
+     },
+     {
+        "name": "Pamela Barden",
+        "title": "Multichannel Fundraising",
+        "id": "87321273"
+     },
+     {
+        "name": "Pamela Barden",
+        "title": "Donor Relations",
+        "id": "87320863"
+     },
+     {
+        "name": "Pamela Barden",
+        "title": "Fundraising and Learning",
+        "id": "87321274"
+     },
+     {
+        "name": "Pamela Barden",
+        "title": "I am Pamela…",
+        "id": "87321271"
+     },
+     {
+        "name": "Pamela Barden",
+        "title": "More practical advice…",
+        "id": "87321277"
+     }]
+}
