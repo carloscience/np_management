@@ -244,3 +244,74 @@ a#capital_campaigns:hover {
 		width:90%;
 	}*/
 }
+
+@media only screen and (max-width: 479px) {
+
+		.graphic_align {
+			display: block;
+			float: none;
+			width: 100%;
+		}
+
+		#titles h2, #titles h3 {
+			font-size: 0.7em;
+		}
+
+		#titles h2 {
+			line-height: 10px;
+		}
+
+		#titles h3 {
+			line-height: 0px;
+		}
+
+		#titles li {
+			font-size: 0.7em;
+			line-height: 11px;
+		}
+
+		#titles ul {
+			margin-top: 15%;
+		}
+
+		#video_wrapper {
+			padding-top: 8%;
+		}
+
+		#video_list {
+			padding: 0 0 0 6%;
+			max-width: 50%;
+		}
+
+		#video_list #titles {
+			margin-top: 5%;
+		}
+
+		#webinar_header h2, #webinar_header h3 {
+			font-size: 1.2em;
+		}
+
+		.divide {
+			font-size: 1.9em;
+		}
+		.main_header {
+			text-align: center;
+		}
+		#player_nav {
+			font-size: 0.6em;
+		}
+		#player_nav a {
+			/*margin-right: 5px;*/
+		}
+		#status {
+			left: 28%;
+			width: 95%;
+		}
+		#status h1 {
+			font-size: 16px;
+		}
+		#status h2 {
+			font-size: 17px;
+		}
+		
+	}

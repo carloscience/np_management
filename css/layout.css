@@ -111,6 +111,7 @@ a, a:hover {
 		#footer {
 			width: 81%;
 		}
+
 	}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -121,7 +122,15 @@ a, a:hover {
 		h3 {
 			font-size: 20px;
 		}
-		
+
+		#stock {
+			display: none;
+		}
+
+		.graphic_align {
+			display: block;
+			float: none;
+		}
 		
 		#footer {
 			width: 73.34%;
