@@ -57,7 +57,8 @@ NP.Router = Backbone.Router.extend({
   index: function() {
     console.log('router home');
     this.setDefaultStyle();
-    NP.home.render(); // render home template
+    NP.home = new NP.Home();
+    //NP.home.render(); // render home template
   },
 
   campaign: function() {
@@ -101,16 +102,16 @@ NP.Router = Backbone.Router.extend({
     NP.setVideo(id, '/!fundraising_professionals', 'Fundraising Professionals', '#!fundraising_professionals');
   },
   setDefaultStyle: function() {
-    $('#content').empty();
+    //$('#content').empty();
     $('header, #wrapper h1').show();
-    $('#wrapper').css('max-width', '970px');
+    //$('#wrapper').css('max-width', '970px');
   }
 });
 
 NP.setDefaultStyle = function() {
-  $('#content').empty();
+  //$('#content').empty();
   $('header, #wrapper h1').show();
-  $('#wrapper').css('max-width', '970px');
+  //$('#wrapper').css('max-width', '970px');
 };
 
 NP.Home = Backbone.Layout.extend({
@@ -122,6 +123,7 @@ NP.Home = Backbone.Layout.extend({
     'click .np_slide': 'webinar'
 	},
 	initialize: function() {
+    this.render();
 	},
 	showOverlay: function(e) {
     var webinar_title = $(e.currentTarget).attr('id');
@@ -196,7 +198,7 @@ NP.CampaignView = Backbone.Layout.extend({
 
 NP.setVideo = function(id, url_root, name, url, title) {
   $('header, #wrapper h1').hide();
-  $('#wrapper').css('max-width', '100%');
+  //$('#wrapper').css('max-width', '100%');
   NP.videoModel.videoId = id;
   NP.videoModel.videoTitle = title;
   NP.videoModel.urlRoot = url_root;
@@ -307,7 +309,7 @@ NP.ShowVideo = Backbone.Layout.extend({
 
 $(document).ready(function() {
   
-  NP.home = new NP.Home();
+  
   NP.router = new NP.Router();
 
   // start router

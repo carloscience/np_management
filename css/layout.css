@@ -42,12 +42,12 @@ a, a:hover {
 	float: left;
 	color: #FFF;
 	font-weight: bold;
-	background-color: #2d2d2d;
+	background-color: #2f2f2f;
 	display: inline;
-	width: 91.1%;
+	width: 90.2%;
 	padding: 5px 40px;
 	position: relative;
-	top: -46px;
+	top: -2px;
 }
 
 #footer .footerLinks {
@@ -86,6 +86,15 @@ a, a:hover {
 	float: right;
 	font-size: 0.7em;
 	padding: 4px 0 0;
+	width: 40%;
+}
+
+#footer .copyright img {
+	width: 50%;
+}
+
+#footer .copyright p {
+	text-align: right;
 }
 
 #footer a{color: #FFF; font-weight: normal; }
@@ -101,7 +110,7 @@ a, a:hover {
 	@media only screen and (min-width: 768px) and (max-width: 959px) {
 		
 		#footer {
-			width: 89%;
+			/*width: 89.5%;*/
 		}
 	}
 
@@ -109,7 +118,7 @@ a, a:hover {
 	@media only screen and (max-width: 767px) {
 		
 		#footer {
-			width: 81%;
+			/*width: 81%;*/
 		}
 
 	}
@@ -133,7 +142,7 @@ a, a:hover {
 		}
 		
 		#footer {
-			width: 73.34%;
+			/*width: 73.34%;*/
 		}
 	}
 
