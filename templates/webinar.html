@@ -7,16 +7,16 @@
 </div>
 <section id="video_wrapper">
 <nav id="player_nav">
-	<a href="#!index">Nonprofit Management and Fundraising Webinars</a> <a href="<%= NP.videoModel.href %>"><%= NP.videoModel.sectionName %></a> <span class="watch">Watch</span>
+	<a href="#!index">Nonprofit Management and Fundraising Webinars</a> ><a class="webinar_landing" href="<%= NP.videoModel.href %>"><%= NP.videoModel.sectionName %></a> ><span class="watch">Watch</span>
 </nav>
 <div id="fluid_video">
 	<iframe id="player_1" src="//player.vimeo.com/video/<%= NP.videoModel.videoId %>?api=1&amp;player_id=player_1&amp;title=0&amp;autoplay=1&amp;byline=0&amp;portrait=0" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 </section>
 <script type="text/javascript">
-$('#status').fadeOut(3000); // will first fade out the loading animation
-$('#preloader').delay(3000).fadeOut('slow'); // will fade out the white DIV that covers the website.
-$('body').delay(3000).css({'overflow':'visible'});
+$('#status').fadeOut(2000); // will first fade out the loading animation
+$('#preloader').delay(2000).fadeOut('slow'); // will fade out the white DIV that covers the website.
+$('body').delay(1000).css({'overflow':'visible'});
 (function(){
 
                 // Listen for the ready event for any vimeo video players on the page
@@ -37,19 +37,42 @@ $('body').delay(3000).css({'overflow':'visible'});
 
                     	function onLoadProgress() {
                             froogaloop.addEvent('loadProgress', function(data) {
-                            	/*if (data==null) {
-                            		console.log('data is loading');
+                            	if (data==null) {
+                            		//console.log('data is loading');
                             	}
-                            	console.log('loadProgress event : ' + data.percent + ' : ' + data.bytesLoaded + ' : ' + data.bytesTotal + ' : ' + data.duration);*/
+                            	//console.log('loadProgress event : ' + data.percent + ' : ' + data.bytesLoaded + ' : ' + data.bytesTotal + ' : ' + data.duration);
                             });
                     	}
 
                         function onFinish() {
                            froogaloop.addEvent('finish', function(data) {
                            	NP.router.navigate(NP.videoModel.href.slice(1, NP.videoModel.href.length));
-                           	NP.setDefaultStyle();
+                           	
                            	var section = NP.videoModel.href.slice(2, NP.videoModel.href.length);
-                           	NP.showWebinarList(section);
+                             switch (section) {
+                                case 'capital_campaigns':
+                                // render capital campaign template
+                                    NP.campaignView.render();
+                                    break;
+                                case 'cause_marketing':
+                                    // render cause marketing template
+                                    NP.marketingView.render();
+                                    break;
+                                case 'founders_syndrome':
+                                    // render founders syndrome template
+                                    NP.foundersView.render();
+                                    break;
+                                case 'grant_writing':
+                                    // render grant writing template
+                                    NP.grantView.render();
+                                    break;
+                                case 'fundraising_professionals':
+                                    // render fundraising professionals template
+                                    NP.fundraisingView.render();
+                                    break;
+                            }
+                            NP.setDefaultStyle();
+                           	//NP.showWebinarList(section);
                            });
                         }
                         onLoadProgress();

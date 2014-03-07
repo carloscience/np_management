@@ -44,7 +44,7 @@ a, a:hover {
 	font-weight: bold;
 	background-color: #2f2f2f;
 	display: inline;
-	width: 90.2%;
+	width: 90%;
 	padding: 5px 40px;
 	position: relative;
 	top: -2px;
@@ -54,6 +54,10 @@ a, a:hover {
 	display: inline;
 	float: left;
 	font-size: 0.7em;
+}
+
+.footerLinks strong {
+	color: #fff;
 }
 
 #footer ul {
@@ -124,7 +128,9 @@ a, a:hover {
 	}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+		
+	}
 
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 	@media only screen and (max-width: 479px) {

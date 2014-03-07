@@ -44,7 +44,7 @@ a#capital_campaigns:hover {
 #content {
 	width: 100%;
 	max-width:100%;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .graphic_align {
@@ -52,7 +52,7 @@ a#capital_campaigns:hover {
 	float: left;
 	width:49%;
 	margin-bottom:0;
-	margin-right:4px;
+	margin-right:2px;
 }
 
 .graphic_align img {
@@ -121,6 +121,10 @@ a#capital_campaigns:hover {
 	max-width: 960px;
 }
 
+.mobile {
+	display: none;
+}
+
 #webinar_graphic img {
 	width: 100%;
 	max-width: 100%;
@@ -129,10 +133,15 @@ a#capital_campaigns:hover {
 #video_list {
 	position: absolute;
 	top: 0;
-	background-color: rgba(46, 44, 44, 0.74);
-	height:99%;
+	/*background-color: rgba(46, 44, 44, 0.74);*/
+	height:100%;
 	padding: 0 3% 0 3%;
 	max-width: 30%;
+	background: url(../images/Mobile/sidebar-mobile.png) top center repeat;
+}
+
+#video_list strong {
+	color: #fff;
 }
 
 #video_wrapper {
@@ -160,21 +169,26 @@ a#capital_campaigns:hover {
 #player_nav {
 	margin-top: 8%;
 	text-align: left;
-	padding-left: 5px;
+	height: 20px;
+	color: #595959;
 }
 
 #player_nav a {
-	color: #595959;
-	font-weight: bold;
-	margin-right: 20px;
+	color: #fff;
+	font-weight: normal;
+	margin: 0 5px;
+}
+
+body, html, iframe, #player, .fallback {
+	height: 99% !important;
+}
+
+.watch {
+	margin-left: 5px;
 }
 
 #video_list #titles {
 	margin-top: 30%;
-}
-
-#video_list strong {
-	color: #fff;
 }
 
 #titles h2 {
@@ -200,13 +214,18 @@ a#capital_campaigns:hover {
 	position: relative;
 }
 
-#titles a:hover:before {
-	content: url('../images/play.png') top center no-repeat !important;
-	position: absolute;
-	left: -22px;
-}
+/*#titles a:hover {
+	content: url(../images/play.png) top center no-repeat !important;
+	background: url(../images/play.png) top left no-repeat !important;*/
+	/*position: absolute;*/
+	/*left: -22px;*/
+	/*width: 34px;
+	height: 17px;*/
+	/*z-index: 100;
+}*/
 
 .play {
+	/*background: url('../images/play.png') top center no-repeat !important;*/
 	position: absolute;
 	left: -22px;
 	width: 17px !important;
@@ -252,6 +271,44 @@ a#capital_campaigns:hover {
 	text-transform: uppercase;
 }
 
+.social_icons a {
+	width: 22px;
+	height: 22px;
+	font: 0/0 a;
+  	text-shadow: none;
+	color: transparent;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.blog {
+	background: url('../images/blogLogo.gif') top center no-repeat;	
+}
+
+.facebook {
+	background: url('../images/facebookLogo.gif') top center no-repeat;
+}
+
+.twitter {
+	background: url('../images/twitterLogo.gif') top center no-repeat;
+}
+
+.gplus {
+	background: url('../images/googleplusLogo.gif') top center no-repeat;
+}
+
+.linkedin {
+	background: url('../images/linkedInLogo.gif') top center no-repeat;
+}
+
+.pinterest {
+	background: url('../images/pinterestLogo.gif') top center no-repeat;
+}
+
+.youtube {
+	background: url('../images/youtube.gif') top center no-repeat;
+}
+
 @media only screen and (max-width: 985px) {
 	/*.graphic_align img {
 		width:90%;
@@ -273,12 +330,17 @@ a#capital_campaigns:hover {
 		}*/
 }
 
+@media only screen and (max-width: 550px) {
+	
+}
+
 @media only screen and (max-width: 479px) {
 
-		.graphic_align {
+		.mobile {
 			display: block;
-			float: none;
-			width: 100%;
+		}
+		.desktop {
+			display: none;
 		}
 
 		#titles h2, #titles h3 {
@@ -313,6 +375,7 @@ a#capital_campaigns:hover {
 
 		#video_list #titles {
 			margin-top: 5%;
+			padding-right: 10px;
 		}
 
 		#webinar_header h2, #webinar_header h3 {
@@ -342,8 +405,27 @@ a#capital_campaigns:hover {
 			font-size: 17px;
 		}
 
+		.graphic_align {
+			display: block;
+			float: none;
+			width: 100%;
+		}
+
 		#graphic_align img {
 			width: 99.7%;
+		}
+
+		#footer .footerLinks {
+			margin-bottom: 10px;
+		}
+
+		#footer .copyright {
+			float: none;
+			width: 100%;
+		}
+
+		#footer .copyright p { 
+			text-align: left;
 		}
 		
 	}

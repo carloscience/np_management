@@ -5,6 +5,7 @@
         "title": "What is cause related marketing?",
         "href": "#!cause_marketing",
         "image": "images/ScottPansky.jpg",
+        "mobile": "images/Mobile/ScottPansky-mobile.jpg",
         "id": "87487837",
         "part": "",
         "class": "title_block",
@@ -20,7 +21,6 @@
      {
         "name": "Scott Pansky",
         "title": "Employee Engagement",
-        "href": "#!cause_marketing",
         "id": "87488336",
         "part": "",
         "class": "title_inblock"
@@ -28,7 +28,6 @@
      {
         "name": "Scott Pansky",
         "title": "Authentic",
-        "href": "#!cause_marketing",
         "id": "87487836",
         "part": "",
         "class": "title_inblock"
@@ -36,7 +35,6 @@
      {
         "name": "Scott Pansky",
         "title": "Customer Activation",
-        "href": "#!cause_marketing",
         "id": "87488335",
         "part": "",
         "class": "title_inblock"
@@ -44,23 +42,13 @@
      {
         "name": "Scott Pansky",
         "title": "Understand Your Organization",
-        "href": "#!cause_marketing",
         "id": "87490582",
-        "part": "",
-        "class": "title_block"
-     },
-     {
-        "name": "Scott Pansky",
-        "title": "I am Scott...",
-        "href": "#!cause_marketing",
-        "id": "87490579",
         "part": "",
         "class": "title_block"
      },
       {
         "name": "Scott Pansky",
         "title": "Corporate Partners",
-        "href": "#!cause_marketing",
         "id": "87488332",
         "part": "",
         "class": "title_block"
@@ -68,7 +56,6 @@
      {
         "name": "Scott Pansky",
         "title": "Society’s Rising Expectations",
-        "href": "#!cause_marketing",
         "id": "87490581",
         "part": "",
         "class": "title_block"
@@ -76,7 +63,6 @@
      {
         "name": "Scott Pansky",
         "title": "Consumer Fatigue",
-        "href": "#!cause_marketing",
         "id": "87487838",
         "part": "",
         "class": "title_block"
@@ -84,7 +70,6 @@
      {
         "name": "Scott Pansky",
         "title": "Gold, Silver Bronze",
-        "href": "#!cause_marketing",
         "id": "87488337",
         "part": "",
         "class": "title_block"
@@ -92,7 +77,6 @@
      {
         "name": "Scott Pansky",
         "title": "Socialanthrophy",
-        "href": "#!cause_marketing",
         "id": "87490580",
         "part": "",
         "class": "title_block"
@@ -100,7 +84,6 @@
      {
         "name": "Scott Pansky",
         "title": "You no longer control your brand",
-        "href": "#!cause_marketing",
         "id": "87488331",
         "part": "Bonus",
         "class": "title_block"
