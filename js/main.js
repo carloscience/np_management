@@ -35,7 +35,8 @@ Backbone.Layout.configure({
   }
 });
 
-NP.videoModel = Backbone.Model.extend({});
+NP.VideoModel = Backbone.Model.extend({});
+NP.videoModel = new NP.VideoModel();
 
 // Backbone router for nav links and deep linking to videos
 NP.Router = Backbone.Router.extend({
@@ -87,31 +88,27 @@ NP.Router = Backbone.Router.extend({
     NP.showWebinarList('fundraising_professionals');
   },
   showCampaign: function(id) {
-    NP.setVideo(id, '/!capital_campaigns', 'Capital Campaigns', '#!capital_campaigns');
+    NP.setVideo(id, '/!capital_campaigns', 'Capital Campaigns', '#!capital_campaigns', NP.videoModel.videoTitle);
   },
   showMarketing: function(id) {
-    NP.setVideo(id, '/!cause_marketing', 'Cause Marketing', '#!cause_marketing');
+    NP.setVideo(id, '/!cause_marketing', 'Cause Marketing', '#!cause_marketing', NP.videoModel.videoTitle);
   },
   showFounders: function(id) {
-    NP.setVideo(id, '/!founders_symdrome', 'Founders Syndrome & Succession Planning', '#!founders_syndrome');
+    NP.setVideo(id, '/!founders_symdrome', 'Founders Syndrome & Succession Planning', '#!founders_syndrome', NP.videoModel.videoTitle);
   },
   showGrant: function(id) {
-    NP.setVideo(id, '/!grant_writing', 'Grant Writing', '#!grant_writing');
+    NP.setVideo(id, '/!grant_writing', 'Grant Writing', '#!grant_writing', NP.videoModel.videoTitle);
   },
   showFundraising: function(id) {
-    NP.setVideo(id, '/!fundraising_professionals', 'Fundraising Professionals', '#!fundraising_professionals');
+    NP.setVideo(id, '/!fundraising_professionals', 'Fundraising Professionals', '#!fundraising_professionals', NP.videoModel.videoTitle);
   },
   setDefaultStyle: function() {
-    //$('#content').empty();
     $('header, #wrapper h1').show();
-    //$('#wrapper').css('max-width', '970px');
   }
 });
 
 NP.setDefaultStyle = function() {
-  //$('#content').empty();
   $('header, #wrapper h1').show();
-  //$('#wrapper').css('max-width', '970px');
 };
 
 NP.Home = Backbone.Layout.extend({
@@ -128,11 +125,6 @@ NP.Home = Backbone.Layout.extend({
 	showOverlay: function(e) {
     var webinar_title = $(e.currentTarget).attr('id');
 		$(e.currentTarget).parent('section').find('#overlay').show();
-    /*$(e.currentTarget).on('click', function(e) {
-      e.preventDefault();
-      console.log('clicked image');
-      NP.showWebinarList(webinar_title);
-    });*/
 	},
 	hideOverlay: function(e) {
 		e.preventDefault();
@@ -180,25 +172,27 @@ NP.CampaignView = Backbone.Layout.extend({
     template: 'cc_list',
     el: '#content',
     events: {
-      'click #titles a': 'showPlayer'
+      'mouseenter #titles a': 'showIcon',
+      'mouseleave #titles a': 'hideIcon'
     },
     initialize: function() {
       NP.router.navigate("!capital_campaigns");
       this.render();
     },
-    showPlayer: function(e) {
+    showIcon: function(e) {
       e.preventDefault();
-      var video_id = $(e.currentTarget).attr('id');
-      var video_title = $(e.currentTarget).attr('title');
-      NP.router.navigate("!capital_campaigns/" + video_id);
-      // set video data to store in model
-      NP.setVideo(video_id, '/!capital_campaigns', 'Capital Campaigns', '#!capital_campaigns', video_title);
+      $('#titles img').remove();
+      $(e.currentTarget).before('<img src="images/play.png" class="play" />');
+    },
+    hideIcon: function(e) {
+      e.preventDefault();
+      $(e.currentTarget).parent().find('img').remove();
     }
 });
 
 NP.setVideo = function(id, url_root, name, url, title) {
   $('header, #wrapper h1').hide();
-  //$('#wrapper').css('max-width', '100%');
+  //NP.videoModel = new NP.VideoModel();
   NP.videoModel.videoId = id;
   NP.videoModel.videoTitle = title;
   NP.videoModel.urlRoot = url_root;
@@ -219,12 +213,14 @@ NP.MarketingView = Backbone.Layout.extend({
       this.render();
     },
     showPlayer: function(e) {
-      e.preventDefault();
+      //e.preventDefault();
       var video_id = $(e.currentTarget).attr('id');
       var video_title = $(e.currentTarget).attr('title');
-      NP.router.navigate("!cause_marketing/" + video_id);
+      //NP.router.navigate("!capital_campaigns/" + video_id);
       // set video data to store in model
-      NP.setVideo(video_id, '/!cause_marketing', 'Cause Marketing', '#!cause_marketing', video_title);
+      NP.videoModel.videoTitle = video_title;
+      NP.router.showMarketing(video_id);
+      //NP.setVideo(video_id, '/!capital_campaigns', 'Capital Campaigns', '#!capital_campaigns', video_title);
     }
 });
 
@@ -239,12 +235,11 @@ NP.FoundersView = Backbone.Layout.extend({
       this.render();
     },
     showPlayer: function(e) {
-      e.preventDefault();
+      //e.preventDefault();
       var video_id = $(e.currentTarget).attr('id');
       var video_title = $(e.currentTarget).attr('title');
-      NP.router.navigate("!founders_syndrome/" + video_id);
-      // set video data to store in model
-      NP.setVideo(video_id, '/!founders_symdrome', 'Founders Syndrome & Succession Planning', '#!founders_syndrome', video_title);
+      NP.videoModel.videoTitle = video_title;
+      NP.router.showFounders(video_id);
     }
 });
 
@@ -259,12 +254,11 @@ NP.GrantView = Backbone.Layout.extend({
       this.render();
     },
     showPlayer: function(e) {
-      e.preventDefault();
+      //e.preventDefault();
       var video_id = $(e.currentTarget).attr('id');
       var video_title = $(e.currentTarget).attr('title');
-      NP.router.navigate("!grant_writing/" + video_id);
-      // set video data to store in model
-      NP.setVideo(video_id, '/!grant_writing', 'Grant Writing', '#!grant_writing', video_title);
+      NP.videoModel.videoTitle = video_title;
+      NP.router.showGrant(video_id);
     }
 });
 
@@ -279,12 +273,11 @@ NP.FundraisingView = Backbone.Layout.extend({
       this.render();
     },
     showPlayer: function(e) {
-      e.preventDefault();
+      //e.preventDefault();
       var video_id = $(e.currentTarget).attr('id');
       var video_title = $(e.currentTarget).attr('title');
-      NP.router.navigate("!fundraising_professionals/" + video_id);
-      // set video data to store in model
-      NP.setVideo(video_id, '/!fundraising_professionals', 'Fundraising Professionals', '#!fundraising_professionals', video_title);
+      NP.videoModel.videoTitle = video_title;
+      NP.router.showFundraising(video_id);
     }
 });
 
@@ -294,16 +287,6 @@ NP.ShowVideo = Backbone.Layout.extend({
     initialize: function() {
       // render webinar template
       this.render();
-      /*$.getJSON('http://www.vimeo.com/api/oembed.json?url=http://vimeo.com/' + NP.videoModel.videoId + '&api=1&width=960&callback=?', function(data){
-        $('#fluid_video').html(data.html); //puts an iframe embed from vimeo's json
-        $('#fluid_video iframe').load(function(){
-          player = document.querySelectorAll('iframe')[0];
-          $('#fluid_video iframe').attr('id', NP.videoModel.videoId);
-          $f(player).addEvent('ready', function(id){
-            var vimeoVideo = $f(id);
-          });
-        });
-      });*/
     }
 });
 

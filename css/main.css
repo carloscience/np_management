@@ -173,6 +173,10 @@ a#capital_campaigns:hover {
 	margin-top: 30%;
 }
 
+#video_list strong {
+	color: #fff;
+}
+
 #titles h2 {
 	font-size: 18px;
 	color: #fff;
@@ -203,7 +207,10 @@ a#capital_campaigns:hover {
 }
 
 .play {
-	background: url('../images/play.png') top center no-repeat !important;
+	position: absolute;
+	left: -22px;
+	width: 17px !important;
+	height: 17px !important;
 }
 
 #cover_sidebar {

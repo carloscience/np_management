@@ -7,7 +7,7 @@
 </div>
 <section id="video_wrapper">
 <nav id="player_nav">
-	<a href="#!index">Nonprofit Management and Fundraising Webinars</a> <a href="<%= NP.videoModel.href %>"><%= NP.videoModel.sectionName %></a> Watch
+	<a href="#!index">Nonprofit Management and Fundraising Webinars</a> <a href="<%= NP.videoModel.href %>"><%= NP.videoModel.sectionName %></a> <span class="watch">Watch</span>
 </nav>
 <div id="fluid_video">
 	<iframe id="player_1" src="//player.vimeo.com/video/<%= NP.videoModel.videoId %>?api=1&amp;player_id=player_1&amp;title=0&amp;autoplay=1&amp;byline=0&amp;portrait=0" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -37,10 +37,10 @@ $('body').delay(3000).css({'overflow':'visible'});
 
                     	function onLoadProgress() {
                             froogaloop.addEvent('loadProgress', function(data) {
-                            	if (data==null) {
+                            	/*if (data==null) {
                             		console.log('data is loading');
                             	}
-                            	console.log('loadProgress event : ' + data.percent + ' : ' + data.bytesLoaded + ' : ' + data.bytesTotal + ' : ' + data.duration);
+                            	console.log('loadProgress event : ' + data.percent + ' : ' + data.bytesLoaded + ' : ' + data.bytesTotal + ' : ' + data.duration);*/
                             });
                     	}
 
