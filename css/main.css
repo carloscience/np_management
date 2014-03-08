@@ -323,15 +323,61 @@ body, html, iframe, #player, .fallback {
 		#titles ul {
 			margin-top: 15%;
 		}
-
-		/*#video_list {
-			padding: 0 0 0 6%;
-			max-width: 50%;
-		}*/
 }
 
-@media only screen and (max-width: 550px) {
-	
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	#status {
+    		margin:-100px 0 0 -200px; /* is width and height divided by two */
+	}
+
+	.main_header {
+		padding-left: 5px;
+	}
+
+	#titles li {
+		left: 2px;
+		line-height: 14px;
+	}
+
+	#titles a {
+		font-size: 0.8em;
+	}
+
+	.play {
+		left: -20px !important;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+	.graphic_align .mobile {
+		display: inline-block;
+
+	}		
+
+	.graphic_align .desktop {
+		display: none;
+	}
+
+	.graphic_align {
+		width: 47%;
+	}
+
+	.play {
+		display: none;
+	}
+
+	#titles a:before {
+		content: url('../images/play.png') top center no-repeat !important;
+		position: absolute;
+		left: -22px;
+		width: 17px !important;
+		height: 17px !important;
+	}
+
+	#video_list strong {
+		color: #fff;
+	}
+
 }
 
 @media only screen and (max-width: 479px) {
@@ -426,6 +472,18 @@ body, html, iframe, #player, .fallback {
 
 		#footer .copyright p { 
 			text-align: left;
+		}
+
+		.play {
+			display: none;
+		}
+
+		#titles a:before {
+			content: url('../images/play.png') top center no-repeat !important;
+			position: absolute;
+			left: -22px;
+			width: 17px !important;
+			height: 17px !important;
 		}
 		
 	}
