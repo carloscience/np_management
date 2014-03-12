@@ -352,6 +352,11 @@ body, html, iframe, #player, .fallback {
 	.graphic_align .mobile {
 		display: inline-block;
 
+	}
+
+	.graphic_align {
+		display: inline-block;
+		float: none;
 	}		
 
 	.graphic_align .desktop {
@@ -359,7 +364,7 @@ body, html, iframe, #player, .fallback {
 	}
 
 	.graphic_align {
-		width: 47%;
+		width: 48.8%;
 	}
 
 	.play {
@@ -378,6 +383,9 @@ body, html, iframe, #player, .fallback {
 		color: #fff;
 	}
 
+	/*#footer {
+		width: 84.2%;
+	}*/
 }
 
 @media only screen and (max-width: 479px) {
